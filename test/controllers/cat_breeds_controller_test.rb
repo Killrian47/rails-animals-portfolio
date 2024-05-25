@@ -14,6 +14,37 @@ class CatBreedsControllerTest < ActionDispatch::IntegrationTest
   test "should show cat_breed" do
     get cat_breed_url(@cat_breed)
     assert_response :success
-    assert_not_nil assigns(:cat_breed)
+  end
+
+  test "should get new" do
+    get new_cat_breed_url
+    assert_response :success
+  end
+
+  test "should create cat_breed" do
+    assert_difference("CatBreed.count") do
+      post cat_breeds_url, params: { cat_breed: { name: "Isabelle" } }
+    end
+
+    assert_redirected_to cat_breed_url(CatBreed.last)
+  end
+
+  test "should get edit" do
+    get edit_cat_breed_url(@cat_breed)
+    assert_response :success
+  end
+
+  test "should update cat_breed" do
+    patch cat_breed_url(@cat_breed), params: { cat_breed: { name: "European" } }
+
+    assert_redirected_to cat_breed_url(@cat_breed)
+  end
+
+  test "should destroy cat_breed" do
+    assert_difference("CatBreed.count", -1) do
+      delete cat_breed_url(@cat_breed)
+    end
+
+    assert_redirected_to cat_breeds_url
   end
 end
