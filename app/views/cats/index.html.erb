@@ -1,0 +1,18 @@
+<h1 class="text-center my-3">All cats</h1>
+
+<div class="container w-75">
+  <div class="row">
+    <% @cats.each do |cat| %>
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= cat.name %></h5>
+            <p class="card-text"><%= cat.cat_breed.name %></p>
+            <p class="card-text"><%= cat.age %> years old</p>
+            <%= link_to "Show detail", cat_path(cat), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
