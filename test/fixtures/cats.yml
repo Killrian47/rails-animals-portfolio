@@ -1,10 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  name: Leeloo
+  description: 
   cat_breed: one
-  age: 1
+  age: 20
 
 two:
   name: MyString
